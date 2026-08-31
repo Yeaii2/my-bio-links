@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trang cá nhân của @yeaii2</title>
+  <title>Trang cá nhân của Yeaii</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body {
-      /* Hình nền dải ngân hà gradient động */
-      background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #000000);
+      /* Hình nền gradient màu xanh lá pha trắng */
+      background: linear-gradient(-45deg, #22c55e, #f0fdf4, #16a34a, #ffffff);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
       color: #fff;
@@ -17,6 +17,7 @@
       align-items: center;
       min-height: 100vh;
       padding: 50px 20px;
+      overflow-x: hidden;
     }
     
     @keyframes gradientBG {
@@ -26,9 +27,10 @@
     }
 
     .profile-card {
-      background: rgba(255, 255, 255, 0.05);
+      /* Thẻ thông tin tối màu mờ để làm nổi bật trên nền xanh/trắng */
+      background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 24px;
       padding: 30px;
       width: 100%;
@@ -36,40 +38,39 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      z-index: 10; /* Để thẻ nổi lên trên ảnh lơ lửng */
     }
 
     .avatar {
       width: 110px;
       height: 110px;
-      border-radius: 50%;
-      border: 4px solid transparent;
-      background: linear-gradient(#1e1b4b, #1e1b4b) padding-box, 
-                  linear-gradient(45deg, #6366f1, #ec4899, #8b5cf6) border-box;
+      border-radius: 25%; /* Bo góc vuông hơi tròn cho hợp với logo UpCloud */
+      border: 4px solid #fff;
       object-fit: cover;
       margin-bottom: 16px;
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      background-color: #fff;
     }
 
     h1 { font-size: 24px; font-weight: 800; margin-bottom: 8px; letter-spacing: 0.5px;}
     
     .badge {
-      background: rgba(99, 102, 241, 0.2);
-      color: #a5b4fc;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
       padding: 4px 12px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: 600;
       margin-bottom: 15px;
-      border: 1px solid rgba(99, 102, 241, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     p.bio { font-size: 15px; color: #cbd5e1; margin-bottom: 25px; text-align: center; line-height: 1.5; }
 
-    /* Thiết kế thẻ Code */
     .code-box {
       background: rgba(0, 0, 0, 0.4);
-      border: 1px dashed #6366f1;
+      border: 1px dashed #22c55e;
       border-radius: 12px;
       padding: 12px 20px;
       margin-bottom: 30px;
@@ -79,13 +80,12 @@
       align-items: center;
     }
     .code-title { font-size: 12px; color: #94a3b8; text-transform: uppercase; font-weight: 700; margin-bottom: 4px;}
-    .code-value { font-size: 20px; font-weight: 800; color: #ec4899; letter-spacing: 1px;}
+    .code-value { font-size: 20px; font-weight: 800; color: #4ade80; letter-spacing: 1px;}
     .copy-btn { 
-      background: #6366f1; border: none; padding: 8px 16px; border-radius: 8px; 
+      background: #22c55e; border: none; padding: 8px 16px; border-radius: 8px; 
       color: white; font-weight: bold; cursor: pointer; transition: 0.2s;
     }
-    .copy-btn:hover { background: #4f46e5; transform: scale(1.05); }
-    .copy-btn:active { transform: scale(0.95); }
+    .copy-btn:hover { background: #16a34a; transform: scale(1.05); }
 
     .links-container { width: 100%; display: flex; flex-direction: column; gap: 14px; }
     
@@ -93,62 +93,60 @@
       display: flex;
       align-items: center;
       padding: 16px 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 16px;
       color: #fff;
       text-decoration: none;
       font-size: 16px;
       font-weight: 600;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
+      transition: all 0.3s ease;
     }
     
-    .btn span.icon { font-size: 22px; margin-right: 15px; }
+    .btn span.icon { font-size: 22px; margin-right: 15px; display: flex; align-items: center;}
+    .btn span.icon svg { width: 22px; height: 22px; }
     .btn span.text { flex-grow: 1; text-align: left; }
     
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-upcloud:hover { background: #7c3aed; border-color: #8b5cf6; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); }
+    .btn-upcloud:hover { background: #16a34a; border-color: #22c55e; }
     .btn-tiktok:hover { background: #FE2C55; border-color: #ff4b6f; }
     .btn-discord:hover { background: #5865F2; border-color: #7289da; }
     
-    /* Trang trí hạt nhấp nháy */
-    .sparkle { position: absolute; font-size: 20px; animation: float 3s infinite ease-in-out; }
-    .s1 { top: 10%; left: 15%; animation-delay: 0s; }
-    .s2 { top: 30%; right: 10%; font-size: 15px; animation-delay: 1s; }
-    .s3 { bottom: 20%; left: 5%; font-size: 25px; animation-delay: 2s; }
+    /* Ảnh UpCloud lơ lửng */
+    .sparkle { position: absolute; animation: float 4s infinite ease-in-out; border-radius: 20%; opacity: 0.7; z-index: 1;}
+    .s1 { top: 8%; left: 10%; width: 50px; animation-delay: 0s; }
+    .s2 { top: 25%; right: 8%; width: 40px; animation-delay: 1.5s; }
+    .s3 { bottom: 18%; left: 8%; width: 60px; animation-delay: 2.5s; }
+    .s4 { bottom: 28%; right: 12%; width: 45px; animation-delay: 1s; }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
-      50% { transform: translateY(-20px) rotate(10deg); opacity: 0.3; }
+      0%, 100% { transform: translateY(0px) rotate(-5deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
     }
   </style>
 </head>
 <body>
 
-  <div class="sparkle s1">✨</div>
-  <div class="sparkle s2">🌟</div>
-  <div class="sparkle s3">⭐</div>
+  <!-- Các ảnh UpCloud lơ lửng -->
+    <img src="IMG_4095.jpeg" class="sparkle s1" alt="upcloud">
+  <img src="IMG_4095.jpeg" class="sparkle s2" alt="upcloud">
+  <img src="IMG_4095.jpeg" class="sparkle s3" alt="upcloud">
+  <img src="IMG_4095.jpeg" class="sparkle s4" alt="upcloud">
 
   <div class="profile-card">
-    <img class="avatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=Binbin" alt="Avatar">
+    <img class="avatar" src="IMG_4095.jpeg" alt="Avatar">
 
-    <h1>@yeaii2</h1>
-    <div class="badge">Official Creator</div>
+    <h1>Yeaii</h1>
+    <div class="badge">Official UpCloud Content Creator</div>
     
     <p class="bio">
       ☁️ UpCloud Application Promoter<br>
-      🎮 Chia sẻ game & Hướng dẫn nhận tài nguyên miễn phí
+      🎮 Chia sẻ hướng dẫn UpCloud & Hướng dẫn nhận code UpCloud miễn phí
     </p>
 
     <div class="code-box">
       <div>
-        <div class="code-title">Official Fixed Code</div>
+        <div class="code-title">Official UpCloud Fixed Code</div>
         <div class="code-value" id="promoCode">upcloud123</div>
       </div>
       <button class="copy-btn" onclick="copyCode()">Copy</button>
@@ -156,19 +154,25 @@
 
     <div class="links-container">
       
+      <!-- Link UpCloud đổi thành icon Tay cầm Game 🎮 -->
       <a href="https://up.cts6.com/apph5/#/?source_member=1526" target="_blank" class="btn btn-upcloud">
-        <span class="icon">☁️</span>
+        <span class="icon">🎮</span>
         <span class="text">Đăng ký tài khoản UpCloud</span>
       </a>
 
+      <!-- Link TikTok cập nhật Icon chuẩn và Text -->
       <a href="https://www.tiktok.com/@yeaii2" target="_blank" class="btn btn-tiktok">
-        <span class="icon">🎵</span>
-        <span class="text">Xem video trên TikTok</span>
+        <span class="icon">
+          <!-- Icon TikTok SVG nét căng -->
+          <svg viewBox="0 0 448 512" fill="currentColor"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+        </span>
+        <span class="text">Tài khoản Tiktok chính thức</span>
       </a>
 
+      <!-- Link Discord -->
       <a href="https://discord.gg/YTBHPMDxAx" target="_blank" class="btn btn-discord">
         <span class="icon">💬</span>
-        <span class="text">Tham gia Cộng đồng Discord</span>
+        <span class="text">Tham gia Cộng đồng Discord chính thức của UpCloud</span>
       </a>
 
     </div>
@@ -180,10 +184,10 @@
       navigator.clipboard.writeText(codeText).then(() => {
         const btn = document.querySelector(".copy-btn");
         btn.innerText = "Đã Copy!";
-        btn.style.background = "#10b981";
+        btn.style.background = "#15803d";
         setTimeout(() => {
           btn.innerText = "Copy";
-          btn.style.background = "#6366f1";
+          btn.style.background = "#22c55e";
         }, 2000);
       });
     }
